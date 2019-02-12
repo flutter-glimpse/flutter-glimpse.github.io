@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../node_modules/milligram/dist/milligram.min.css';
 import './App.css';
+import { SocialIcon } from 'react-social-icons';
 
 function App() {
     const linkBase = 'https://flutter-glimpse.tomasdostal.com/';
@@ -91,7 +92,10 @@ function App() {
             <FAQ></FAQ>
 
             <footer>
-                This project is maintained by <a href="" target="_blank">Tomas Dostal</a>
+                This project is maintained by <a href="https://tomasdostal.com" target="_blank">Tomas Dostal</a>
+                <SocialIcon url="https://twitter.com/tomino2112" />
+                <SocialIcon url="https://www.linkedin.com/in/dostaltomas/" />
+                <SocialIcon url="https://www.github.com/tomino2112" />
             </footer>
         </div>
     );
