@@ -114,10 +114,10 @@ function App() {
 
 function ReadmeImageTags(attr) {
     const gifImageTag = attr.glimpseGif
-        && <div>Video glimpse:<p>{'<img src='+attr.glimpseGif+' width="320" />'}</p></div>;
+        && <div>Video glimpse:<p>{'<img src="'+attr.glimpseGif+'" width="320" />'}</p></div>;
 
     const pngImageTag = attr.glimpsePng
-        && <div>Screenshot glimpse:<p>{'<img src='+attr.glimpsePng+' width="320" />'}</p></div>;
+        && <div>Screenshot glimpse:<p>{'<img src="'+attr.glimpsePng+'" width="320" />'}</p></div>;
 
     const markup = (gifImageTag || pngImageTag)
         ? [gifImageTag, pngImageTag]
