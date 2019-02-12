@@ -36,6 +36,15 @@ function App() {
         stateCallback(value);
     }
 
+    function prefillExample() {
+        setDisplayGlimpse(false);
+        setRepo('tomino2112/flutter_driver_test');
+        setBranch('');
+        setPath('');
+        setTarget('test_driver/app_showcase');
+        setDisplayGlimpse(true);
+    }
+
     return (
         <div className="container App">
             <div className="header">
@@ -45,29 +54,31 @@ function App() {
             </div>
 
             <section>
-                <h4>1. Provide info about your Flutter app</h4>
+                <h4>1. Provide info about your Flutter app <button type="button" className="button button-outline button-example" onClick={prefillExample}>Example</button></h4>
+
+
                 <div className="row">
                     <div className="column column-50">
                         <label>Repository <span className="required">*</span> <small> Github username/repository of your Flutter app.</small></label>
-                        <input type="text" placeholder="username/repository" onChange={e => onInputChange(e.target.value, setRepo)} />
+                        <input type="text" value={repo} placeholder="username/repository" onChange={e => onInputChange(e.target.value, setRepo)} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="column column-50">
                         <label>Branch <small>Repository branch to checkout. Defaults to <strong>master</strong></small></label>
-                        <input type="text" placeholder="master" onChange={e => onInputChange(e.target.value, setBranch)} />
+                        <input type="text" value={branch} placeholder="master" onChange={e => onInputChange(e.target.value, setBranch)} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="column column-50">
                         <label>Path <small>Path to Flutter app within the repository. Defaults to <strong>/</strong></small></label>
-                        <input type="text" placeholder="path/to/flutter/app" onChange={e => onInputChange(e.target.value, setPath)} />
+                        <input type="text" value={path} placeholder="path/to/flutter/app" onChange={e => onInputChange(e.target.value, setPath)} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="column column-50">
                         <label>Integration test target <small>Path to the integration test to execute (if any)</small></label>
-                        <input type="text" placeholder="test_driver/target" onChange={e => onInputChange(e.target.value, setTarget)} />
+                        <input type="text" value={target} placeholder="test_driver/target" onChange={e => onInputChange(e.target.value, setTarget)} />
                     </div>
                 </div>
             </section>
